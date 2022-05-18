@@ -19,7 +19,7 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    reactions: [reactionSchema]
+    reactions: [likeSchema]
   },
   {
     toJSON: {
@@ -28,8 +28,8 @@ const postSchema = new Schema(
   }
 );
 
-postSchema.virtual('reactionCount').get(function() {
-  return this.reactions.length;
+postSchema.virtual('LikeCount').get(function() {
+  return this.likes.length;
 });
 
 const Post = model('Post', postSchema);
