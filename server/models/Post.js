@@ -1,6 +1,7 @@
 const { Schema, model } = require('mongoose');
 
 const dateFormat = require('../utils/dateFormat');
+const likeSchema = require ('./Like');
 
 const postSchema = new Schema(
   {
@@ -19,7 +20,7 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    reactions: [likeSchema]
+    likes: [likeSchema] 
   },
   {
     toJSON: {
@@ -28,7 +29,8 @@ const postSchema = new Schema(
   }
 );
 
-postSchema.virtual('LikeCount').get(function() {
+
+postSchema.virtual('likeCount').get(function() {
   return this.likes.length;
 });
 

@@ -19,12 +19,14 @@ const resolvers = {
       return User.find()
         .select('-__v -password')
         .populate('posts')
+        .populate('likes');
 
     },
     user: async (parent, { username }) => {
       return User.findOne({ username })
         .select('-__v -password')
-        .populate('post');
+        .populate('posts')
+        .populate('likes');
     },
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
@@ -32,7 +34,8 @@ const resolvers = {
     },
     post: async (parent, { _id }) => {
       return Post.findOne({ _id });
-    }
+    },
+    //likes: async ()
   },
 
   Mutation: {
@@ -73,6 +76,7 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
+    //addLike:
   }
 };
 

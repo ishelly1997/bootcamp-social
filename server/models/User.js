@@ -26,12 +26,10 @@ const userSchema = new Schema(
         ref: 'Post'
       }
     ],
-    friends: [
-      {
-        type: Schema.Types.ObjectId,
-        ref: 'User'
-      }
-    ]
+    likes: [{
+      type:Schema.Types.ObjectId,
+      ref:'Post'
+    }]
   },
   {
     toJSON: {
@@ -54,6 +52,10 @@ userSchema.pre('save', async function(next) {
 userSchema.methods.isCorrectPassword = async function(password) {
   return bcrypt.compare(password, this.password);
 };
+
+userSchema.virtual('likeCount').get(function() {
+  return this.likes.length;
+});
 
 const User = model('User', userSchema);
 
