@@ -1,7 +1,7 @@
-const { Schema, model } = require('mongoose');
+const { Schema, model, default: mongoose } = require('mongoose');
 
 const dateFormat = require('../utils/dateFormat');
-const likeSchema = require ('./Like');
+const likeSchema = require('./Like');
 
 const postSchema = new Schema(
   {
@@ -20,7 +20,16 @@ const postSchema = new Schema(
       type: String,
       required: true
     },
-    likes: [likeSchema] 
+    likes: [{
+      value: {
+        type: Number,
+        default: 1
+      },
+      liker: {
+        type: mongoose.schema.types.ObjectId,
+        ref: 'User'
+      }
+    }]
   },
   {
     toJSON: {
@@ -29,10 +38,19 @@ const postSchema = new Schema(
   }
 );
 
+postSchema.virtual('likeCount').get(() => {
+  return this.likes.length
+})
 
-postSchema.virtual('likeCount').get(function() {
-  return this.likes.length;
-});
+postSchema.methods.like = function (liker) {
+  if (!this.likes.includes({
+    liker: liker
+  })) {
+    this.likes.push({ liker: liker })
+    return this.save();
+  }
+
+};
 
 const Post = model('Post', postSchema);
 

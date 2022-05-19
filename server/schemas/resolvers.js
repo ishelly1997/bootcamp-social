@@ -76,7 +76,16 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    //addLike:
+    addLike: async (parent, args, context) => {
+      if (context.user) {
+        const liker = await User.findById(context.user._id)
+        const post = await Post.findById(...args)
+        post.addLike(liker)
+        post.save()
+        return post;
+      } 
+      throw new AuthenticationError('You need to be logged in!');
+    }
   }
 };
 
