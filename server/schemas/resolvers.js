@@ -35,6 +35,7 @@ const resolvers = {
     post: async (parent, { _id }) => {
       return Post.findOne({ _id });
     },
+    //like: async 
     //likes: async ()
   },
 
