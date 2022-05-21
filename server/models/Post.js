@@ -26,7 +26,7 @@ const postSchema = new Schema(
         default: 1
       },
       liker: {
-        type: mongoose.schema.types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
       }
     }]
