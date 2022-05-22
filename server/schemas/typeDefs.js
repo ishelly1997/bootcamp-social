@@ -9,7 +9,7 @@ const typeDefs = gql`
   }
 
   type Post {
-
+    _id: ID
     postText: String
     createdAt: String
     username: String
