@@ -30,12 +30,18 @@ const resolvers = {
     },
     posts: async (parent, { username }) => {
       const params = username ? { username } : {};
-      return Post.find(params).sort({ createdAt: -1 });
+      return Post.find(params).sort({ createdAt: -1 }).populate('likes');
+      
     },
     post: async (parent, { _id }) => {
-      return Post.findOne({ _id });
+      return Post.findOne({ _id }).populate('likes');
     },
-    //likes: async ()
+    // like: async (parent, {_id}) =>{
+
+    // }
+    // likes: async (parent, {_id}) =>{
+
+    // }
   },
 
   Mutation: {
@@ -76,7 +82,16 @@ const resolvers = {
 
       throw new AuthenticationError('You need to be logged in!');
     },
-    //addLike:
+    addLike: async (parent, args, context) => {
+      if (context.user) {
+        const liker = await User.findById(context.user._id)
+        const post = await Post.findById(...args)
+        post.addLike(liker)
+        post.save()
+        return post;
+      } 
+      throw new AuthenticationError('You need to be logged in!');
+    }
   }
 };
 
