@@ -22,6 +22,8 @@
   },
   "homepage": "https://github.com/ishelly1997/bootcamp-social#readme",
   "dependencies": {
-    "concurrently": "^5.1.0"
+    "concurrently": "^5.1.0",
+    "env-cmd": "^10.1.0",
+    "styled-components": "^5.3.5"
   }
 }
