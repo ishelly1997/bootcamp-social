@@ -4,6 +4,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Login from './pages/Login';
 import SignUp from './pages/Signup'
+import Home from './pages/Homepage'
 
 import NoMatch from './pages/NoMatch';
 
@@ -34,7 +35,7 @@ const App = () => {
     });
 
   return(
-    <body className='App' >
+    <div className='App' >
       <div className='App-header'>
         <img className='App-logo' src={require('./images/Bootcamp.gif')} alt='/'/>
       </div>
@@ -52,10 +53,10 @@ const App = () => {
           <Header />
           <div>
             <Routes>
-              {/* <Route
+               <Route
                 path="/"
                 element={<Home />}
-              /> */}
+              /> 
               <Route
                 path="/login"
                 element={<Login />}
@@ -83,7 +84,7 @@ const App = () => {
       </Router>
     </ApolloProvider>
       
-    </body>
+    </div>
   
   );
 
