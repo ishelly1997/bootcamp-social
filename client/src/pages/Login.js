@@ -8,7 +8,7 @@ import Auth from '../utils/auth'
 
 const Login = (props) => {
 
-    const [formState, setFormState] = useState({ username: '', password: '' });
+    const [formState, setFormState] = useState({ email: '', password: '' });
 
     const [login, { error }] = useMutation(LOGIN_USER);
   
@@ -46,11 +46,26 @@ const Login = (props) => {
         <form >
           <div className="input-container" onSubmit={handleFormSubmit}>
             <label>Email </label>
-            <input type="text" name="uname" required value={formState.email} onChange={handleChange} />
+            <input 
+              placeholder='Your email'
+              name='email'
+              type='email'
+              id='email'
+              value={formState.email}
+              onChange={handleChange}
+
+/>
           </div>
           <div className="input-container">
             <label>Password </label>
-            <input type="password" name="pass" required value={formState.password} onChange={handleChange} />
+            <input 
+              placeholder='******'
+              name='password'
+              type='password'
+              id='password'
+              value={formState.password}
+              onChange={handleChange}
+/>
           </div>
           <div className="button-container">
             <input type="submit" onChange={handleChange} />
@@ -62,3 +77,15 @@ const Login = (props) => {
 };
 
 export default Login;
+
+// type="text" 
+// name="uname" 
+// required 
+// value={formState.email} 
+// onChange={handleChange} 
+
+// type="password" 
+// name="pass" 
+// required 
+// value={formState.password} 
+// onChange={handleChange} 
