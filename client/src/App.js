@@ -1,18 +1,19 @@
 // import logo from './logo.svg';
 import './App.css';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import Login from './pages/Login';
-import SignUp from './pages/Signup'
-
-import NoMatch from './pages/NoMatch';
-
+import React from 'react';
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client'; 
 
 import { setContext } from '@apollo/client/link/context'; 
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-const App = () => {
+import Header from './components/Header';
+import Footer from './components/Footer';
+
+import Login from './pages/Login';
+import SignUp from './pages/Signup'
+import Home from './pages/Homepage'
+import NoMatch from './pages/NoMatch';
+
   const httpLink = createHttpLink({
     uri: '/graphql',
   });
@@ -32,49 +33,34 @@ const App = () => {
       link: authLink.concat(httpLink),
       cache: new InMemoryCache(),
     });
-
+function App() {
   return(
-    <body className='App' >
-      <div className='App-header'>
-        <img className='App-logo' src={require('./images/Bootcamp.gif')} alt='/'/>
-      </div>
-      
-      {/* <form className='App-form'>
-        <div className='App-formContent'>
-          <p>hello</p>
-        </div>
-      </form> */}
-
 
     <ApolloProvider client={client}>
       <Router>
         <div>
           <Header />
-          <div>
+          <div className='container'>
             <Routes>
-              {/* <Route
-                path="/"
-                element={<Home />}
-              /> */}
               <Route
-                path="/login"
-                element={<Login />}
+                exact path="/"
+                component={Home}
               />
-              /* <Route
+              <Route
+                exact path="/login"
+                component={Login}
+              />
+              <Route
                 path="/signup"
-                element={<SignUp />}
-              />
-              {/* <Route
-                path="/profile"
-                element={<Profile />}
+                component={SignUp}
               />
               <Route
-                path="/thought"
-                element={<SingleThought />}
-              />  */}
+                path="/homepage"
+                element={<Home />}
+              />
                   <Route
                     path="*"
-                    element={<NoMatch />}
+                    component={NoMatch}
                   />
             </Routes>
           </div>
@@ -82,11 +68,8 @@ const App = () => {
         </div>
       </Router>
     </ApolloProvider>
-      
-    </body>
-  
   );
+  }
 
-}
 
 export default App;
