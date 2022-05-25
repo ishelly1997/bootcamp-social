@@ -1,9 +1,11 @@
 // import logo from './logo.svg';
 import './App.css';
 import Footer from './components/Footer';
+
 import Login from './pages/Login';
 import SignUp from './pages/Signup'
 import Home from './pages/Homepage'
+
 
 import Events from './pages/Events'
 
@@ -86,7 +88,7 @@ const App = () => {
     </div>
 
   );
+  }
 
-}
 
 export default App;
