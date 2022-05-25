@@ -8,7 +8,7 @@ import Home from './pages/Homepage'
 
 
 import Events from './pages/Events'
-
+import Network from './pages/Network';
 import NoMatch from './pages/NoMatch';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
@@ -70,6 +70,13 @@ const App = () => {
             element={
 
               <Events />
+            }             
+            />
+                        <Route
+               path="/network"
+            element={
+
+              <Network />
             }             
             />
             {/*
