@@ -40,7 +40,6 @@ const Login = () => {
       //  username: '',
        // password: '',
    //   });
-=======
   
       // clear form values
       setFormState({
