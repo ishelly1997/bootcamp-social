@@ -11,6 +11,8 @@ import Events from './pages/Events'
 import Network from './pages/Network';
 import NoMatch from './pages/NoMatch';
 
+import Nav from "./components/Navigation/nav"
+
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 import { setContext } from '@apollo/client/link/context';
@@ -43,6 +45,11 @@ const App = () => {
       <div className='App-header'>
         <img className='App-logo' src={require('./images/Bootcamp.gif')} alt='/' />
       </div>
+
+      {/* <div>
+        <Nav></Nav>
+      </div> */}
+
 
       {/* <form className='App-form'>
         <div className='App-formContent'>
