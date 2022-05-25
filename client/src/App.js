@@ -1,12 +1,14 @@
 // import logo from './logo.svg';
 import './App.css';
 import Footer from './components/Footer';
+
 import Login from './pages/Login';
 import SignUp from './pages/Signup'
 import Home from './pages/Homepage'
 
-import Events from './pages/Events'
 
+import Events from './pages/Events'
+import Network from './pages/Network';
 import NoMatch from './pages/NoMatch';
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
@@ -70,6 +72,13 @@ const App = () => {
               <Events />
             }             
             />
+                        <Route
+               path="/network"
+            element={
+
+              <Network />
+            }             
+            />
             {/*
                   <Route
                   path="*"
@@ -86,7 +95,7 @@ const App = () => {
     </div>
 
   );
+  }
 
-}
 
 export default App;

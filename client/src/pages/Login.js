@@ -40,12 +40,20 @@ const Login = () => {
       //  username: '',
        // password: '',
    //   });
+  
+      // clear form values
+      setFormState({
+        username: '',
+        password: '',
+      });
+
     };
     return(
         <div className="form">
         <form >
           <div className="input-container">
             <label>Username </label>
+
             <input 
               placeholder='Username'
               name='username'
@@ -64,6 +72,7 @@ const Login = () => {
               value={formState.password}
               onChange={handleChange}
 />
+
           </div>
           <div className="button-container">
             <input type="submit" onClick={handleFormSubmit}/>
@@ -72,6 +81,7 @@ const Login = () => {
      {/*
       {error && <div>Login failed</div>}
      */}  
+
       </div>
     )
 };
