@@ -4,9 +4,9 @@ import Auth from '../utils/auth'
 
 const Events = () => {
 
-    if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-        return <Navigate to="/events" />;
-      }
+    // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
+    //     return <Navigate to="/events" />;
+    //   }
 
   return (
     <div>
