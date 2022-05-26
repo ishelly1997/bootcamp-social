@@ -28,7 +28,7 @@ export const QUERY_POST = gql`
   }
 `;
 
-export const QUERY_USER = gql`
+export const QUERY_USERS = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
