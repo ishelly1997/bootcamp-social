@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-//import { Redirect, useParams } from 'react-router-dom';
+//import { Navigate, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_USERS } from '../utils/queries'
 
@@ -9,12 +9,16 @@ import usericon from "../images/network.png"
 const Network = () => {
   
   const { data } = useQuery(QUERY_USERS);
-  //const users = data?.users || [];
+  let users;
+  if(data){
+    users=data.users
+  }
+ 
   console.log(data);
 
     return (
 <div className="container">
-        {data.users.map((user) => (
+        {users && users.map((user) => (
           <div key={user._id} className="card mb-3">
             <p className="card-header">
               {user.username}
@@ -23,7 +27,7 @@ const Network = () => {
             <div className="card-body">
               <p>{user.email}</p>
               <p>Cohort: Columbia University Full-Stack Bootcamp May 2022</p>
-              <Link onClick id="view-profile" to="/profile" className="profile-link" >
+              <Link id="view-profile" to="/profile" className="profile-link" >
                 <button id="view-profile">View Profile</button>
               </Link> 
       </div>

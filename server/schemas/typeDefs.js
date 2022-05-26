@@ -5,7 +5,6 @@ const typeDefs = gql`
     _id: ID
     username: String
     email: String
-    posts: [Post]
   }
 
   type Post {
@@ -15,6 +14,16 @@ const typeDefs = gql`
     username: String
     likeCount: Int
     
+  }
+
+  type: Query {
+    Posts {
+      _id: ID
+      postText: String
+      createdAt: String
+      username: String
+      likeCount: Int
+    }
   }
 
   type Auth {
