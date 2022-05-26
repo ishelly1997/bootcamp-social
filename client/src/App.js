@@ -54,10 +54,10 @@ const App = () => {
             <div className="App-body">
             <Routes>
               <Route 
-                  exact path="/" 
+                  exact path="/home" 
                   element={<Home />} />
               <Route
-                path="/login" 
+                path="/" 
                 element={<Login />}
               />
               <Route 
