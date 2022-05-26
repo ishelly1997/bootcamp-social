@@ -10,9 +10,9 @@ import Profile from './pages/Profile';
 
 import Events from './pages/Events'
 import Network from './pages/Network';
-import NoMatch from './pages/NoMatch';
+// import NoMatch from './pages/NoMatch';
+// import Nav from "./components/Navigation/nav"
 
-import Nav from "./components/Navigation/nav"
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 

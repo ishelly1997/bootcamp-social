@@ -14,7 +14,7 @@ const Profile = () => {
                 
                 <div>
                 <img 
-                style={{"border-radius":"90px"}}
+                style={{"border-radius":"90px", "margin-top": "5px" }}
                 src="https://i.imgur.com/bDLhJiP.jpg" 
                 width="200"  
                 alt='/'/>
