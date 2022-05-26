@@ -3,18 +3,18 @@ background-color: #c8f0fe;
 background-image: url(images/bootcampsocialbackground.png);
 background-position: center;
 background-repeat: no-repeat;
-height: 1300px;
+height: 930px;
 }
 
 .App-header {
   text-align: left;
   background-color: white;
   color: rgb(51, 78, 168);
-  height: 10vh;
+  height: 12vh;
 }
 
 .App-logo {
-  height: 10vh;
+  height: 12vh;
   pointer-events: none;
 }
 
@@ -53,6 +53,14 @@ height: 1300px;
 
 .App-link {
   color: #61dafb;
+}
+
+.App-footer {
+  position:absolute;
+  text-align: center;
+   width:100%;
+   height:20px;   /* Height of the footer */
+   background:rgb(242, 242, 246);
 }
 
 @keyframes App-logo-spin {

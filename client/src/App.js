@@ -5,6 +5,7 @@ import Footer from './components/Footer';
 import Login from './pages/Login';
 import SignUp from './pages/Signup'
 import Home from './pages/Homepage'
+import Profile from './pages/Profile';
 
 
 import Events from './pages/Events'
@@ -16,14 +17,12 @@ import Nav from "./components/Navigation/nav"
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
 import { setContext } from '@apollo/client/link/context';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 
 const App = () => {
   const httpLink = createHttpLink({
     uri: '/graphql',
   });
-
 
   const authLink = setContext((_, { headers }) => {
     const token = localStorage.getItem('id_token');
@@ -41,21 +40,21 @@ const App = () => {
   });
 
   return (
-    <div className='App' >
+    <><div className='App'>
       <div className='App-header'>
         <img className='App-logo' src={require('./images/Bootcamp.gif')} alt='/' />
       </div>
 
       {/* <div>
-        <Nav></Nav>
-      </div> */}
+      <Nav></Nav>
+    </div> */}
 
 
       {/* <form className='App-form'>
-        <div className='App-formContent'>
-          <p>hello</p>
-        </div>
-      </form> */}
+      <div className='App-formContent'>
+        <p>hello</p>
+      </div>
+    </form> */}
 
 
       <ApolloProvider client={client}>
@@ -64,42 +63,42 @@ const App = () => {
 
             <Route exact path="/" element={<Home />} />
             <Route
-               path="/login" element={<Login />}
-            />
+              path="/login" element={<Login />} />
             <Route path="/signup"
-              element={
-
-                <SignUp />
-              }
-            />
+              element={<SignUp />} />
             <Route
-               path="/events"
-            element={
-
-              <Events />
-            }             
-            />
-                        <Route
-               path="/network"
-            element={
-
-              <Network />
-            }             
-            />
+              path="/events"
+              element={<Events />} />
+            <Route
+              path="/network"
+              element={<Network />} />
+                          <Route
+              path="/profile"
+              element={<Profile />} />
+                          <Route
+              path="/homepage"
+              element={<Home />} />
             {/*
-                  <Route
-                  path="*"
-                  element={<NoMatch />}
-                  />
-    */}
+
+          <Route
+          path="*"
+          element={<NoMatch />}
+          />
+*/}
 
           </Routes>
 
         </Router>
-        <Footer />
+
       </ApolloProvider>
 
     </div>
+
+    <div className='App-footer'>
+      <Footer  />
+      </div>
+   
+    </>
 
   );
   }

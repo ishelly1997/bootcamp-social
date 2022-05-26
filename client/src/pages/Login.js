@@ -49,8 +49,16 @@ const Login = () => {
 
     };
     return(
-        <div className="form">
+        <div 
+        className="form"
+        align="center"
+        >
+          <div class="row h-100 justify-content-center align-items-center">
         <form >
+        <h1>Bootcamp Social</h1>
+                <p class="description">
+                  Welcome to After Camp
+                </p>
           <div className="input-container">
             <label>Username </label>
 
@@ -71,17 +79,18 @@ const Login = () => {
               id='password'
               value={formState.password}
               onChange={handleChange}
+              type='password'
 />
 
           </div>
           <div className="button-container">
-            <input type="submit" onClick={handleFormSubmit}/>
+            <input align="center" value="Login" type="submit" onClick={handleFormSubmit}/>
           </div>
+          {error && <div>Login failed</div>}
+          <p class="copyright">&copy; Your journey doesn't stop after camp.</p>
         </form>
-     {/*
-      {error && <div>Login failed</div>}
-     */}  
 
+           </div>
       </div>
     )
 };
