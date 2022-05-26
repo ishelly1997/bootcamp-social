@@ -1,6 +1,8 @@
 
 import React from 'react'
 
+import newsfeed from '../images/newsfeed.png'
+
 
 const chatRoom = () => {
     
@@ -9,7 +11,10 @@ const chatRoom = () => {
 
     return(
         <div class='chat-container'>
-            <p>hello</p>
+            <h3>Welcome Tech to Messaging!</h3>
+
+                <img src={newsfeed}></img>
+            <p>This site is currently under construction. Come back soon!</p>
       </div>
     )
 }

@@ -96,6 +96,12 @@ height: 930px;
    background:rgb(242, 242, 246);
 }
 
+.Resources{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);
