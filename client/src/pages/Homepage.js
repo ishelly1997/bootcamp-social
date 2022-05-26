@@ -10,7 +10,6 @@ const Home = () => {
   // }
   return (
     <div>
-      <Header></Header>
       <h3>Welcome Tech Alumns!</h3>
 
       
