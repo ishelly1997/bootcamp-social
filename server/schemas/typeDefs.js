@@ -16,16 +16,6 @@ const typeDefs = gql`
     
   }
 
-  type: Query {
-    Posts {
-      _id: ID
-      postText: String
-      createdAt: String
-      username: String
-      likeCount: Int
-    }
-  }
-
   type Auth {
     token: ID!
     user: User
