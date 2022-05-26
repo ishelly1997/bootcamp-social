@@ -1,6 +1,7 @@
 // import logo from './logo.svg';
 import './App.css';
 import Footer from './components/Footer';
+import Header from './components/Header'
 
 import Login from './pages/Login';
 import SignUp from './pages/Signup'
@@ -10,8 +11,9 @@ import Home from './pages/Homepage'
 import Events from './pages/Events'
 import Network from './pages/Network';
 import NoMatch from './pages/NoMatch';
-
-import Nav from "./components/Navigation/nav"
+import Jobs from './pages/Jobs'
+import Messaging from './pages/Messaging'
+import Resources from './pages/Resources'
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
@@ -41,68 +43,71 @@ const App = () => {
   });
 
   return (
-    <div className='App' >
-      <div className='App-header'>
-        <img className='App-logo' src={require('./images/Bootcamp.gif')} alt='/' />
-      </div>
-
-      {/* <div>
-        <Nav></Nav>
-      </div> */}
-
-
-      {/* <form className='App-form'>
-        <div className='App-formContent'>
-          <p>hello</p>
-        </div>
-      </form> */}
-
 
       <ApolloProvider client={client}>
         <Router>
-          <Routes>
+          <Header> </Header>
+          <div className='App' >
+            
 
-            <Route exact path="/" element={<Home />} />
-            <Route
-               path="/login" element={<Login />}
-            />
-            <Route path="/signup"
-              element={
-
-                <SignUp />
-              }
-            />
-            <Route
-               path="/events"
-            element={
-
-              <Events />
-            }             
-            />
-                        <Route
-               path="/network"
-            element={
-
-              <Network />
-            }             
-            />
-            {/*
-                  <Route
+            <div className="App-body">
+            <Routes>
+              <Route 
+                  exact path="/" 
+                  element={<Home />} />
+              <Route
+                path="/login" 
+                element={<Login />}
+              />
+              <Route 
+                  path="/signup"
+                  element={<SignUp />}
+              />
+              <Route
+                  path="/events"
+                  element={<Events />}             
+              />
+              <Route
+                  path="/network"
+                  element={<Network />}             
+              />
+              <Route
+                  path="/jobs"
+                  element={<Jobs />}             
+              />
+              <Route
+                  path="/messaging"
+                  element={<Messaging />}             
+              />
+              <Route
+                  path="/resources"
+                  element={<Resources />}             
+              />     
+              <Route
                   path="*"
                   element={<NoMatch />}
-                  />
-    */}
+              />
 
-          </Routes>
-
+            </Routes>
+            </div>
+          </div>
         </Router>
+      
         <Footer />
       </ApolloProvider>
 
-    </div>
+   
 
   );
   }
 
 
 export default App;
+
+
+   
+
+          //     <Route
+          //     path="/network"
+          //     element={<Network />}             
+          // />
