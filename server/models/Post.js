@@ -1,7 +1,7 @@
 const { Schema, model, default: mongoose } = require('mongoose');
 
 const dateFormat = require('../utils/dateFormat');
-const likeSchema = require('./Like');
+/* //const likeSchema = //require('./Like'); */
 
 const postSchema = new Schema(
   {
@@ -26,7 +26,7 @@ const postSchema = new Schema(
         default: 1
       },
       liker: {
-        type: mongoose.schema.types.ObjectId,
+        type: Schema.Types.ObjectId,
         ref: 'User'
       }
     }]
