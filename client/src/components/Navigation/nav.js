@@ -16,14 +16,14 @@ const Nav = () => {
     return (
         <nav className="navigator">
             <div style={{ background: color }}>
-                <Link onClick={()=> setColor("#c8f0fe")} id="navtab" to="/" className="tab-links" >   
+                <Link  id="navtab" to="/" className="tab-links" >   
                     <img src={homeIcon} alt="/" className="tab-icons"></img>
                     {/* <p className="nav-titles">Home</p> */}
                 </Link>
             </div>
 
             <div style={{ background: color }}>
-                <Link onClick={()=> setColor("#fec8e9")} id="navtab" to="/network" className="tab-links">   
+                <Link  id="navtab" to="/network" className="tab-links">   
                     <img src={networkIcon} alt="/" className="tab-icons" ></img>
                     {/* <p className="nav-titles">Network</p> */}
                 </Link>
@@ -44,7 +44,7 @@ const Nav = () => {
             </div>
 
             <div style={{ background: color }}>
-                <Link onClick={()=> setColor("#fec8e9")} id="navtab" to="/events" className="tab-links">   
+                <Link  id="navtab" to="/events" className="tab-links">   
                     <img src={eventsIcon} alt="/" className="tab-icons"></img>
                     {/* <p className="nav-titles">Events</p> */}
                 </Link>
@@ -61,3 +61,8 @@ const Nav = () => {
 }
 
 export default Nav
+
+
+// onClick={()=> setColor("#fec8e9")}
+// onClick={()=> setColor("#fec8e9")}
+// onClick={()=> setColor("#c8f0fe")}

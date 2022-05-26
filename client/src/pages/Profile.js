@@ -22,7 +22,7 @@ const Profile = () => {
                 
                 <div>
                     <span>Recent Grad</span>
-                    <h5 >Lisa Bellum</h5>
+                    <h5 >Alex Hichens</h5>
                     <span>Full Stack Software Developer</span>
                     
                     <div >
@@ -30,13 +30,13 @@ const Profile = () => {
                     
                     </div>
                     
-                     <ul class="social-list" style={{'list-style': 'none'}}>
+                     {/* <ul class="social-list" style={{'list-style': 'none'}}>
                         <li><i class="fa fa-facebook"></i></li>
                         <li><i class="fa fa-dribbble"></i></li>
                         <li><i class="fa fa-instagram"></i></li>
                         <li><i class="fa fa-linkedin"></i></li>
                         <li><i class="fa fa-google"></i></li>
-                    </ul>
+                    </ul> */}
                     
                     <div
                     

@@ -14,6 +14,7 @@ import NoMatch from './pages/NoMatch';
 import Jobs from './pages/Jobs'
 import Messaging from './pages/Messaging'
 import Resources from './pages/Resources'
+import Profile from './pages/Profile'
 
 import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
 
@@ -62,6 +63,10 @@ const App = () => {
               <Route 
                   path="/signup"
                   element={<SignUp />}
+              />
+              <Route
+              path="/profile"
+              element={<Profile />}             
               />
               <Route
                   path="/events"

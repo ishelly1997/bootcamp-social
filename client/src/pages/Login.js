@@ -6,6 +6,8 @@ import {LOGIN_USER} from '../utils/mutations'
 
 import Auth from '../utils/auth'
 
+import { Link } from "react-router-dom";
+
 const Login = () => {
 
     const [formState, setFormState] = useState({ username: '', password: '' });
@@ -49,41 +51,49 @@ const Login = () => {
 
     };
     return(
-        <div className="form">
-        <form >
-          <div className="input-container">
-            <label>Username </label>
-
-            <input 
-              placeholder='Username'
-              name='username'
-              id='username'
-              value={formState.username}
-              onChange={handleChange}
-
-            />
-          </div>
-          <div className="input-container">
-            <label>Password </label>
-            <input 
-              placeholder='******'
-              name='password'
-              id='password'
-              value={formState.password}
-              onChange={handleChange}
+      <div
+      className="form"
+      align="center"
+      >
+        <div class="row h-100 justify-content-center align-items-center">
+      <form >
+      <h1>Bootcamp Social</h1>
+              <p class="description">
+                Welcome to After Camp
+              </p>
+        <div className="input-container">
+          <label>Username </label>
+          <input
+            placeholder='Username'
+            name='username'
+            id='username'
+            value={formState.username}
+            onChange={handleChange}
+          />
+        </div>
+        <div className="input-container">
+          <label>Password </label>
+          <input
+            placeholder='******'
+            name='password'
+            id='password'
+            value={formState.password}
+            onChange={handleChange}
+            type='password'
 />
-
-          </div>
-          <div className="button-container">
-            <input type="submit" onClick={handleFormSubmit}/>
-          </div>
-        </form>
-     {/*
-      {error && <div>Login failed</div>}
-     */}  
-
-      </div>
-    )
+        </div>
+        <div className="button-container">
+          <input align="center" value="Login" type="submit" onClick={handleFormSubmit}/>
+        </div>
+        {error && <div>Login failed</div>}
+        <p class="copyright">&copy; Your journey doesn't stop after camp.</p>
+        <div>No login? <Link id="view-profile" to="/signup" className="profile-link" >
+                <button id="view-profile">Sign Up Here!</button>
+              </Link> </div>
+      </form>
+         </div>
+    </div>
+  )
 };
 
 export default Login;

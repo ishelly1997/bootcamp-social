@@ -23,7 +23,7 @@ const Network = () => {
             <p className="card-header">
               {user.username}
             </p>
-            <img src={usericon} alt="user-icon"></img>
+            <img src={usericon} alt="user-icon" className="tab-icons"></img>
             <div className="card-body">
               <p>{user.email}</p>
               <p>Cohort: Columbia University Full-Stack Bootcamp May 2022</p>
