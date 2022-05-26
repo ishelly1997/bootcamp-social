@@ -28,22 +28,25 @@ export const QUERY_POST = gql`
   }
 `;
 
-export const QUERY_USERS = gql`
+export const QUERY_USER = gql`
   query user($username: String!) {
     user(username: $username) {
       _id
       username
       email
     }
-      posts {
-        _id
-        postText
-        createdAt
-        likes
-      }
-    }
   }
 `;
+export const QUERY_USERS = gql`
+query Users {
+  users {
+    username
+    email
+    _id
+  }
+}
+`;
+
 export const QUERY_ME_BASIC = gql`
   {
     me {

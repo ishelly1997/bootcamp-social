@@ -1,4 +1,4 @@
-/* import React from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 //import { Redirect, useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
@@ -6,23 +6,24 @@ import { QUERY_USERS } from '../utils/queries'
 
 import usericon from "../images/network.png"
 //import Auth from '../utils/auth';
-const Network = (props) => {
+const Network = () => {
   
+  const { data } = useQuery(QUERY_USERS);
+  //const users = data?.users || [];
+  console.log(data);
 
-  const { data: userData } = useQuery(QUERY_USERS)
     return (
-    <div className="container">
-        {userData.map(props => (
-          <div key={props._id} className="card mb-3">
-            
+<div className="container">
+        {data.users.map((user) => (
+          <div key={user._id} className="card mb-3">
             <p className="card-header">
-              {props.username}
+              {user.username}
             </p>
             <img src={usericon} alt="user-icon"></img>
             <div className="card-body">
-              <p>{props.email}</p>
+              <p>{user.email}</p>
               <p>Cohort: Columbia University Full-Stack Bootcamp May 2022</p>
-              <Link onClick id="view-profile" to="/Profile" className="profile-link" >
+              <Link onClick id="view-profile" to="/profile" className="profile-link" >
                 <button id="view-profile">View Profile</button>
               </Link> 
       </div>
@@ -32,4 +33,4 @@ const Network = (props) => {
     );
 };
 
-export default Network; */
+export default Network;
