@@ -16,7 +16,7 @@ const Nav = () => {
     return (
         <nav className="navigator">
             <div style={{ background: color }}>
-                <Link  id="navtab" to="/" className="tab-links" >   
+                <Link  id="navtab" to="/home" className="tab-links" >   
                     <img src={homeIcon} alt="/" className="tab-icons"></img>
                     {/* <p className="nav-titles">Home</p> */}
                 </Link>

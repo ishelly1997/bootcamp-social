@@ -36,7 +36,7 @@ class AuthService {
 
       localStorage.setItem('id_token', idToken);
   
-      window.location.assign('/events');
+      window.location.assign('/home');
     }
   
 

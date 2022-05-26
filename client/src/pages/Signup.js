@@ -44,7 +44,7 @@ const Signup = () => {
             <div className='card-body'>
                 <form onSubmit={handleFormSubmit}>
                 <input
-                    className='fogitrm-input'
+                      className='form-input'
                     placeholder='Your username'
                     name='username'
                     type='username'

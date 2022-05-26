@@ -97,8 +97,10 @@ const App = () => {
             </div>
           </div>
         </Router>
-      
+        <div className='App-footer'>
         <Footer />
+        </div>
+   
       </ApolloProvider>
 
    
