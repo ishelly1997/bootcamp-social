@@ -27,7 +27,9 @@
   
   ## Screenshots
   
-<img width="1222" alt="homepage" src="URL">
+<img width="1222" alt="homepage" src="https://ibb.co/3dZ6xdV">
+
+<img width="1023" alt="events" src="https://ibb.co/3CTjQJv">
 
     
   ## License
