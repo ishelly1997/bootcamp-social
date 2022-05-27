@@ -2,7 +2,7 @@ import React, {useState }from "react";
 
 import { useMutation } from '@apollo/client'
 
-import {LOGIN_USER} from '../utils/mutations'
+import { LOGIN_USER } from '../utils/mutations'
 
 import Auth from '../utils/auth'
 
@@ -16,6 +16,7 @@ const Login = () => {
   
     const handleChange = (event) => {
       const { name, value } = event.target;
+      console.log( name, value )
   
       setFormState({
         ...formState,
@@ -37,13 +38,7 @@ const Login = () => {
       } catch (e) {
         console.error(e);
       }
-  //
-    //  setFormState({
-      //  username: '',
-       // password: '',
-   //   });
-  
-      // clear form values
+
       setFormState({
         username: '',
         password: '',
@@ -56,7 +51,7 @@ const Login = () => {
       align="center"
       >
         <div class="row h-100 justify-content-center align-items-center">
-      <form >
+      <form onSubmit={handleFormSubmit}>
       <h1>Bootcamp Social</h1>
               <p class="description">
                 Welcome to After Camp
@@ -83,7 +78,7 @@ const Login = () => {
 />
         </div>
         <div className="button-container">
-          <input align="center" value="Login" type="submit" onClick={handleFormSubmit}/>
+          <input align="center" value="Login" type="submit" />
         </div>
         {error && <div>Login failed</div>}
         <p class="copyright">&copy; Your journey doesn't stop after camp.</p>
