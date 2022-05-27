@@ -4,7 +4,7 @@
   
   ## Description 
   
-  [APP](heroku link)
+  [APP](https://bootcamp-social.herokuapp.com/)
   
   BOOTCAMP SOCIAL
   The app provides you a place to network with your Bootcamp Cohort and other Bootcamp graduates to discuss our career paths, jobs, ongoing training, projects, ideas, etc.
