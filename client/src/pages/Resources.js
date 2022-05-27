@@ -8,7 +8,7 @@ const Resources = () => {
 <h3>Cohort Contributed Resources:</h3>
 Anthony Marrocco (Cohort 12/21): Github Respository for Bootcamp Resources:
 
-<a href='https://github.com/ajmarrocco/bootcamp-resources' target='_blank'>HERE</a>
+<a href='https://github.com/ajmarrocco/bootcamp-resources' target='_blank' rel="noreferrer">HERE</a>
 
 </div> );};
 
