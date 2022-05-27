@@ -9,7 +9,7 @@ return (
     <div class='chat-container'>
     <h3>Welcome Tech to Jobs!</h3>
 
-        <img src={newsfeed}></img>
+        <img src={newsfeed} alt="more to come"></img>
     <p>This site is currently under construction. Come back soon or go to your LinkedIn</p>
 </div>
 

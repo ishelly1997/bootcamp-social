@@ -13,7 +13,7 @@ const chatRoom = () => {
         <div class='chat-container'>
             <h3>Welcome Tech to Messaging!</h3>
 
-                <img src={newsfeed}></img>
+                <img src={newsfeed} alt-="more to come"></img>
             <p>This site is currently under construction. Come back soon!</p>
       </div>
     )

@@ -3,12 +3,12 @@ import React from 'react';
 
 import newsfeed from '../images/newsfeed.png'
 
-import Auth from '../utils/auth'
+//import Auth from '../utils/auth'
 
-import { Navigate, useParams } from 'react-router-dom';
+//import { Navigate, useParams } from 'react-router-dom';
 
-import { useQuery } from '@apollo/client';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+//import { useQuery } from '@apollo/client';
+//import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 const Home = () => {
 

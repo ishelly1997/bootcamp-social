@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 const Nav = () => {
 
-    const[color, setColor] = useState();
+    const[color, ] = useState();
 
     return (
         <nav className="navigator">
