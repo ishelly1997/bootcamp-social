@@ -27,9 +27,9 @@
   
   ## Screenshots
   
-<img width="1222" alt="homepage" src="[https://ibb.co/3dZ6xdV](https://i.postimg.cc/tJ65DkvJ/homepage.png)">
+<img width="1222" alt="homepage" src="https://user-images.githubusercontent.com/95444521/170612865-ccf2a1db-1996-43e5-8993-48bd97f64120.png">
 
-<img width="1023" alt="events" src="[https://ibb.co/3CTjQJv](https://i.postimg.cc/7LQnkdpb/events.png)">
+<img width="1023" alt="events" src="https://user-images.githubusercontent.com/95444521/170612873-af968aa1-b986-4b47-88f8-38c71f614af4.png">
 
     
   ## License
