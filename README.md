@@ -27,9 +27,9 @@
   
   ## Screenshots
   
-<img width="1222" alt="homepage" src="https://ibb.co/3dZ6xdV">
+<img width="1222" alt="homepage" src="[https://ibb.co/3dZ6xdV](https://i.postimg.cc/tJ65DkvJ/homepage.png)">
 
-<img width="1023" alt="events" src="https://ibb.co/3CTjQJv">
+<img width="1023" alt="events" src="[https://ibb.co/3CTjQJv](https://i.postimg.cc/7LQnkdpb/events.png)">
 
     
   ## License
@@ -41,9 +41,10 @@
   For any questions, please contact me with the information below:
  
   GitHub:<br />
+  • Lavon Green: https://github.com/LavonJGreen<br />
   • Isabel Shelly: https://github.com/ishelly1997<br />
   • Cesar Siguencia: https://github.com/cesarsiguencia<br />
   • Athanasia Kotopoulos: https://github.com/athanasiak18<br />
-  • Lavon Green: https://github.com/LavonJGreen<br />
+
 
   
