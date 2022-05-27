@@ -16,7 +16,6 @@ const Login = () => {
   
     const handleChange = (event) => {
       const { name, value } = event.target;
-      console.log( name, value )
   
       setFormState({
         ...formState,
@@ -26,14 +25,12 @@ const Login = () => {
   
     const handleFormSubmit = async (event) => {
       event.preventDefault();
-      console.log('test')
       try {
     
        const {data} = await login({
           variables: { ...formState }
         });
     
-        console.log(data);
         Auth.login(data.login.token);
       } catch (e) {
         console.error(e);

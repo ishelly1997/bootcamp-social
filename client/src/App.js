@@ -21,6 +21,8 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
+import Auth from './utils/auth'
+
 
 const App = () => {
   const httpLink = createHttpLink({
@@ -42,6 +44,11 @@ const App = () => {
     link: authLink.concat(httpLink),
     cache: new InMemoryCache(),
   });
+
+  const logout = event => {
+    event.preventDefault();
+    Auth.logout();
+  };
 
   return (
 
@@ -96,10 +103,16 @@ const App = () => {
             </Routes>
             </div>
           </div>
+          <div>{Auth.getToken() ? (
+            <><a href='/' onClick={logout}>Logout</a></>
+            ) : (<p>Currently not logged in. Login <a href='/'>HERE</a></p>)}
+        </div>
         </Router>
         <div className='App-footer'>
         <Footer />
         </div>
+           
+  
    
       </ApolloProvider>
 

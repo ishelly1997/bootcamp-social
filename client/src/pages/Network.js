@@ -16,6 +16,14 @@ const Network = () => {
  
   console.log(data);
 
+  if (!localStorage.getItem('id_token')) {
+    return (
+      <h4>
+        You need to be logged in to see this page. Login below.
+      </h4>
+    );
+  }
+
     return (
 <div className="container">
         {users && users.map((user) => (

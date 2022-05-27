@@ -4,6 +4,7 @@ class AuthService {
 
     getProfile() {
       return decode(this.getToken());
+      
     }
   
     loggedIn() {
@@ -28,7 +29,6 @@ class AuthService {
     }
   
     getToken() {
- 
       return localStorage.getItem('id_token');
     }
   
@@ -36,7 +36,7 @@ class AuthService {
     login(idToken) {
 
       localStorage.setItem('id_token', idToken);
-  
+      
       window.location.assign('/home');
     }
   

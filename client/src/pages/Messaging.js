@@ -5,9 +5,14 @@ import newsfeed from '../images/newsfeed.png'
 
 
 const chatRoom = () => {
-    
-    
 
+    if (!localStorage.getItem('id_token')) {
+        return (
+          <h4>
+            You need to be logged in to see this page. Login below.
+          </h4>
+        );
+      }
 
     return(
         <div class='chat-container'>

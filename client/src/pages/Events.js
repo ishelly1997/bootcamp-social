@@ -4,35 +4,19 @@ import Auth from '../utils/auth'
 
 import { Navigate, useParams } from 'react-router-dom';
 
-import { useQuery } from '@apollo/client';
-import { QUERY_USER, QUERY_ME } from '../utils/queries';
+// import { useQuery } from '@apollo/client';
+// import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 const Events = () => {
-  // const { username: userParam } = useParams();
-
-  // const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
-  //   variables: { username: userParam }
-  // });
-
-  // const user = data?.me || data?.user || {};
-
-  // if (loading) {
-  //   return <div>Loading...</div>;
-  // }
 
 
-  // if (Auth.loggedIn() && Auth.getProfile().data.username === userParam) {
-  //   return <Navigate to="/events" />;
-  // }
-
-
-  // if (!user?.username) {
-  //   return (
-  //     <h4>
-  //       You need to be logged in to see this page. Use the navigation links above to sign up or log in!
-  //     </h4>
-  //   );
-  // }
+  if (!localStorage.getItem('id_token')) {
+    return (
+      <h4>
+        You need to be logged in to see this page. Login below.
+      </h4>
+    );
+  }
 
   return (
     <div className="calendar">

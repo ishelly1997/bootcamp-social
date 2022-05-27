@@ -1,7 +1,36 @@
 import React from 'react';
 
+import Auth from '../utils/auth'
+
+import { Navigate, useParams } from 'react-router-dom';
+
+import { useQuery } from '@apollo/client';
+import { QUERY_USER, QUERY_ME } from '../utils/queries';
 
 const Profile = () => {
+  const { username: userParam } = useParams();
+
+  const { loading, data } = useQuery(userParam ? QUERY_USER : QUERY_ME, {
+    variables: { username: userParam }
+  });
+  // console.log(variables)
+
+  const user = data?.me || data?.user || {};
+
+  console.log(user)
+
+  if (loading) {
+    return <div>Loading...</div>;
+  }
+
+  if (!localStorage.getItem('id_token')) {
+    return (
+      <h4>
+        You need to be logged in to see this page. Login below.
+      </h4>
+    );
+  }
+  
   return (
     <div 
     align="center"
