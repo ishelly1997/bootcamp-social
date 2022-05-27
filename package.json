@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/ishelly1997/bootcamp-social#readme",
   "dependencies": {
+    "bcrypt": "^5.0.1",
     "concurrently": "^5.3.0",
     "env-cmd": "^10.1.0",
     "nodemon": "^2.0.16",
