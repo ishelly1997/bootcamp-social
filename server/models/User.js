@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-// const bcrypt = require('bcrypt');
+const bcryptjs = require('bcryptjs');
 
 const userSchema = new Schema(
   {
@@ -42,16 +42,16 @@ const userSchema = new Schema(
 userSchema.pre('save', async function(next) {
   if (this.isNew || this.isModified('password')) {
     const saltRounds = 10;
-    this.password = await bcrypt.hash(this.password, saltRounds);
+    this.password = await bcryptjs.hash(this.password, saltRounds);
   }
 
   next();
 });
 
 // compare the incoming password with the hashed password
-// userSchema.methods.isCorrectPassword = async function(password) {
-//   return bcrypt.compare(password, this.password);
-// };
+userSchema.methods.isCorrectPassword = async function(password) {
+  return bcryptjs.compare(password, this.password);
+};
 
 userSchema.virtual('likeCount').get(function() {
   return this.likes.length;
