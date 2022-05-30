@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
 
 mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost:27017/bootcamp-social-db',
+  process.env.MONGODB_URI || 'mongodb://localhost:27017/bootcamp-social',
   {
     useNewUrlParser: true, 
     useUnifiedTopology: true,
