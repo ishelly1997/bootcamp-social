@@ -9,6 +9,10 @@ const db = require('./config/connection');
 const PORT = process.env.PORT || 3001;
 const app = express();
 
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
+
 const startServer = async () => {
   const server = new ApolloServer({
     typeDefs,
