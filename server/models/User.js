@@ -1,5 +1,5 @@
 const { Schema, model } = require('mongoose');
-const bcrypt = require('bcrypt');
+// const bcrypt = require('bcrypt');
 
 const userSchema = new Schema(
   {
@@ -49,9 +49,9 @@ userSchema.pre('save', async function(next) {
 });
 
 // compare the incoming password with the hashed password
-userSchema.methods.isCorrectPassword = async function(password) {
-  return bcrypt.compare(password, this.password);
-};
+// userSchema.methods.isCorrectPassword = async function(password) {
+//   return bcrypt.compare(password, this.password);
+// };
 
 userSchema.virtual('likeCount').get(function() {
   return this.likes.length;
